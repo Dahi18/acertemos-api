@@ -11,6 +11,9 @@ Video explicativo - https://www.loom.com/share/eb1b19713df34bad971aa34c7f3dbb14?
 For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
 
 ### Node
+Install mongodb for your environment: [official MongoDb website](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)
+
+### Node
 
 - #### Node installation on Windows
 
