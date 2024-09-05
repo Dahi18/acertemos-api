@@ -1,9 +1,12 @@
-const dbConfig = require("./database/db"); // importa config BD
+// agregar configuracion y rutas
+const dbConfig = require("./database/db");
 const productRoutes = require("./routes/product.routes");
 const userRoutes = require("./routes/user.routes");
 
+// agregar middleware
 const authMiddleware = require("./middlewares/auth");
 
+// importar bibliotecas
 let express = require("express"); // importar modulo
 let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
@@ -24,13 +27,12 @@ app.use(bodyParser.json()); // indicar que trabajaremos con JSON
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // abrir el servidor
-const port = 3000;
-app.listen(3000, () => {
-  console.log("Connected to port: " + port);
+app.listen(process.env.PORT, () => {
+  console.log("Connected to port: " + process.env.PORT);
 });
 
 // rutas
-app.use("/products", authMiddleware, productRoutes);
+app.use("/products", authMiddleware, productRoutes); // a esta rute le agregamos un middleware
 app.use("/auth", userRoutes);
 
 // manejador de errores
