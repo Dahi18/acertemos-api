@@ -2,6 +2,8 @@
 
 Prueba tecnica para Acertemos
 
+Video explicativo - https://www.loom.com/share/eb1b19713df34bad971aa34c7f3dbb14?sid=11fe094e-77c6-4abd-a319-78f11211e600
+
 ---
 
 ## Requirements
