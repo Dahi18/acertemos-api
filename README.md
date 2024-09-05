@@ -1,6 +1,6 @@
-# Project Title
+# acertemos-api
 
-A nice project with a nice description
+Prueba tecnica para Acertemos
 
 ---
 
