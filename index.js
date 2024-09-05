@@ -1,4 +1,5 @@
 const dbConfig = require("./database/db"); // importa config BD
+const productRoutes = require("./routes/product.routes");
 
 let express = require("express"); // importar modulo
 let bodyParser = require("body-parser");
@@ -21,9 +22,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // abrir el servidor
 const port = 3000;
-const _ = app.listen(3000, () => {
+app.listen(3000, () => {
   console.log("Connected to port: " + port);
 });
+
+// rutas
+app.use("/products", productRoutes);
 
 // manejador de errores
 app.use((_, res) => {
