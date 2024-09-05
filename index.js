@@ -1,5 +1,4 @@
-// agregar configuracion y rutas
-const dbConfig = require("./database/db");
+// rutas
 const productRoutes = require("./routes/product.routes");
 const userRoutes = require("./routes/user.routes");
 
@@ -9,18 +8,9 @@ const authMiddleware = require("./middlewares/auth");
 // importar bibliotecas
 let express = require("express"); // importar modulo
 let bodyParser = require("body-parser");
-let mongoose = require("mongoose");
 
 // conexion BD
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(dbConfig.db)
-  .then(() => {
-    console.log("Database successfully connected");
-  })
-  .catch((error) => {
-    console.log("Error: " + error);
-  });
+require("./database/init");
 
 const app = express(); // instanciar express
 app.use(bodyParser.json()); // indicar que trabajaremos con JSON
