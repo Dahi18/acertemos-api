@@ -1,5 +1,8 @@
 const dbConfig = require("./database/db"); // importa config BD
 const productRoutes = require("./routes/product.routes");
+const userRoutes = require("./routes/user.routes");
+
+const authMiddleware = require("./middlewares/auth");
 
 let express = require("express"); // importar modulo
 let bodyParser = require("body-parser");
@@ -27,7 +30,8 @@ app.listen(3000, () => {
 });
 
 // rutas
-app.use("/products", productRoutes);
+app.use("/products", authMiddleware, productRoutes);
+app.use("/auth", userRoutes);
 
 // manejador de errores
 app.use((_, res) => {
