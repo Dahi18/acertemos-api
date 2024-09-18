@@ -10,7 +10,10 @@ const productSchema = new Schema({
   description: String,
   price: Number,
   category: String,
+  updateAt: { type: Date, default: Date.now },
   createdAt: { type: Date, default: Date.now }, // tipo fecha y por defecto la fecha actual
+
+  //select: false para no retornar este atributo en los get
 });
 
 // convertimos el schema en un modelo
